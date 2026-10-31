@@ -1,0 +1,7 @@
+# HanTone 运行时零第三方依赖（zero third-party dependencies）
+#
+# 本文件刻意保持为空：项目仅依赖 Python 标准库（zlib / base64 / argparse /
+# unicodedata），开箱即用、离线可用，无需 pip install 任何外部包。
+#
+# 仅在「开发打包」场景才需要额外工具：
+#     pip install build twine
