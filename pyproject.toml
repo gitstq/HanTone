@@ -8,8 +8,9 @@ version = "1.0.0"
 description = "HanTone — 零依赖 · 离线优先的汉字拼音转换引擎（多音字词组级消歧 / 注音 / 变调 / 中文排序）"
 readme = "README.md"
 requires-python = ">=3.8"
-license = "MIT"
-license-files = ["LICENSE", "NOTICE"]
+# 使用 PEP 621 的 {file = ...} 写法，兼容 setuptools >= 61（若改用 SPDX 字符串
+# "MIT" 则需 setuptools >= 77，会在旧环境构建失败）
+license = { file = "LICENSE" }
 authors = [{ name = "HanTone Contributors" }]
 keywords = ["pinyin", "chinese", "hanzi", "zhuyin", "bopomofo", "mandarin", "offline", "zero-dependency"]
 classifiers = [
@@ -42,6 +43,9 @@ hantone = "hantone.cli:main"
 
 [tool.setuptools]
 packages = ["hantone"]
+# 不显式声明 license-files：setuptools 各版本的默认 glob
+# （LICEN[CS]E* / COPYING* / NOTICE* / AUTHORS*）都会自动带上 LICENSE 与 NOTICE，
+# 因此无需使用仅在新旧版本之一受支持的专用字段，避免版本兼容问题。
 
 [tool.setuptools.package-data]
 hantone = ["py.typed"]
