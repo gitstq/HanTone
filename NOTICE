@@ -1,0 +1,20 @@
+HanTone
+Copyright (c) 2026 HanTone Contributors
+
+数据说明 / Data Notice
+--------------------------------------------------------------------------
+HanTone 内置的汉字读音表由本项目依据 Unicode 官方 Unihan 数据库
+（Unihan_Readings.txt）经归一化、权威优先级合并后重新编码生成。
+
+来源 / Source
+  Unicode® Unihan Database — Unihan_Readings.txt
+  https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip
+  © Unicode, Inc.
+  许可协议 / License: Unicode License (https://www.unicode.org/license.txt)
+
+说明 / Notes
+  1. 读音条目属事实性语言数据（facts），本身不受著作权保护；本项目仅对其进行
+     格式归一、多音字频次排序与压缩编码，不改变事实内容。
+  2. 本项目源码（hantone/、tools/、tests/）以 MIT 许可证发布，详见 LICENSE。
+  3. 若需自行重建数据表，请执行 `python tools/build_data.py`，该脚本会下载
+     Unihan 原始数据并在本地重新生成 hantone/_data.py。
